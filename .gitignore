@@ -4,7 +4,6 @@ out/
 
 # Cursor
 .cursor/
-tmp/
 
 # Ignores development broadcast logs
 !/broadcast
@@ -13,6 +12,14 @@ tmp/
 
 # Docs
 docs/
+
+# hardhat
+src/
+tmp/
+scripts/
+deploy/
+test
+task
 
 # Dotenv file
 .env

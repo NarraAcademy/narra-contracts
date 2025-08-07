@@ -1,6 +1,11 @@
 [profile.default]
-src = "src"
+src = "contracts"
 out = "out"
 libs = ["lib"]
+test = "foundry_test"
 
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+# 添加可升级合约库的路径映射
+remappings = [
+    "@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/",
+    "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
+]

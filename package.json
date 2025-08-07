@@ -4,16 +4,48 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf ./artifacts ./cache ./coverage ./coverage.json",
+    "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
+    "coverage": "hardhat coverage --solcoverjs ./.solcover.js --temp artifacts --testfiles \"test/**/*.ts\"",
+    "deploy:contracts": "hardhat deploy",
+    "lint": "pnpm run lint:sol && pnpm run lint:ts && pnpm run prettier:check",
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
+    "lint:ts": "eslint --ignore-path ./.eslintignore --ext .js,.ts .",
+    "prettier:check": "prettier --check \"**/*.{js,json,md,sol,ts,yml}\"",
+    "prettier:write": "prettier --write \"**/*.{js,json,md,sol,ts,yml}\"",
+    "task:deployLock": "hardhat task:deployLock",
+    "task:withdraw": "hardhat task:withdraw",
+    "test": "hardhat test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@nomicfoundation/hardhat-ignition": "^0.15.12",
     "@nomicfoundation/hardhat-toolbox": "^6.0.0",
+    "@nomicfoundation/hardhat-toolbox-viem": "^4.0.0",
+    "@openzeppelin/contracts": "^5.3.0",
+    "@types/chai": "^5.2.2",
     "@types/node": "^24.0.14",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "chai": "^5.2.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.2.0",
+    "eslint": "^8.57.0",
     "hardhat": "^2.25.0",
+    "hardhat-deploy": "^1.0.4",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "solhint": "^4.0.0",
+    "solidity-coverage": "^0.8.5",
     "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^5.3.0",
+    "merkletreejs": "^0.5.2",
+    "viem": "^2.32.0"
   }
 }
