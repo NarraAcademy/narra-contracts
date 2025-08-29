@@ -9,22 +9,19 @@ import "./tasks/accounts";
 import { config as dotenvConfig } from "dotenv";
 import { resolve } from "path";
 
-// 按优先级加载环境变量文件
 const envFiles = [
-  ".env.local", // 本地开发配置（最高优先级）
-  ".env.development", // 开发环境配置
-  ".env.test", // 测试环境配置
-  ".env", // 默认配置（最低优先级）
+  ".env.local", 
+  ".env.development", 
+  ".env.test",
+  ".env",
 ];
 
-// 依次加载环境变量文件，后面的会覆盖前面的
 envFiles.forEach(envFile => {
   const envPath = resolve(__dirname, envFile);
   try {
     dotenvConfig({ path: envPath });
     console.log(`Loaded environment from: ${envFile}`);
   } catch (error) {
-    // 文件不存在时忽略错误
   }
 });
 

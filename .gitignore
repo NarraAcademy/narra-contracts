@@ -20,6 +20,9 @@ scripts/
 deploy/
 test
 task
+docs/
+tasks/
+mapping/
 
 # Dotenv file
 .env
@@ -117,9 +120,9 @@ jspm_packages/
 .tern-port
 
 # dapp
-tmp/
-docs/
-deploy/
 src/
 lib/
-node_modules/
+
+# forge
+script/
+foundry_test/
