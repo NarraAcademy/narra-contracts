@@ -4,7 +4,6 @@ out/
 
 # Cursor
 .cursor/
-tmp/
 
 # Ignores development broadcast logs
 !/broadcast
@@ -108,3 +107,11 @@ jspm_packages/
 
 # TernJS port file
 .tern-port
+
+# dapp
+tmp/
+docs/
+deploy/
+src/
+lib/
+node_modules/
