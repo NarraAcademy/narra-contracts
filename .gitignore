@@ -13,6 +13,14 @@ out/
 # Docs
 docs/
 
+# hardhat
+src/
+tmp/
+scripts/
+deploy/
+test
+task
+
 # Dotenv file
 .env
 .env.local

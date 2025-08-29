@@ -1,6 +1,22 @@
 [profile.default]
-src = "src"
+src = "contracts"
 out = "out"
 libs = ["lib"]
+test = "foundry_test"
 
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+# 添加可升级合约库的路径映射
+remappings = [
+    "@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/",
+    "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
+]
+
+# BSC Testnet 配置
+[rpc_endpoints]
+bsc_testnet = "https://bsc-testnet.bnbchain.org"
+
+[etherscan]
+bsc_testnet = { key = "${ETHERSCAN_API_KEY}" }
+
+[profile.bsc_testnet]
+chain_id = 97
+gas_price = 10000000000 # 10 gwei
