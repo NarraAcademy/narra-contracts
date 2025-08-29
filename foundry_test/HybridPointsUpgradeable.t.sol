@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import { Test, console } from "../lib/forge-std/src/Test.sol";
-import { HybridPointsUpgradeable } from "../contracts/HybridPointsUpgradeable.sol";
+import { HybridPointsUpgradeable } from "../contracts/checkin/HybridPointsUpgradeable.sol";
 import { ERC1967Proxy } from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
 
 contract HybridPointsUpgradeableTest is Test {

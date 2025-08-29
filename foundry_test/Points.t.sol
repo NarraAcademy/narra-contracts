@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import { Test, console } from "../lib/forge-std/src/Test.sol";
-import { PointsContract } from "../contracts/Points.sol";
+import { PointsContract } from "../contracts/checkin/Points.sol";
 
 contract PointsTest is Test {
   PointsContract public points;

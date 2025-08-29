@@ -9,3 +9,14 @@ remappings = [
     "@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/",
     "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
 ]
+
+# BSC Testnet 配置
+[rpc_endpoints]
+bsc_testnet = "https://bsc-testnet.bnbchain.org"
+
+[etherscan]
+bsc_testnet = { key = "${ETHERSCAN_API_KEY}" }
+
+[profile.bsc_testnet]
+chain_id = 97
+gas_price = 10000000000 # 10 gwei

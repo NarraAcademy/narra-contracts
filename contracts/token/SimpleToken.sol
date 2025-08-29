@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+/**
+ * @title SimpleToken
+ * @dev A simple ERC20 contract where the name, symbol, and initial supply
+ * are set during deployment. All tokens are minted to the contract deployer.
+ */
+contract SimpleToken is ERC20 {
+  constructor(
+    string memory name,
+    string memory symbol,
+    uint256 initialSupply
+  ) ERC20(name, symbol) {
+    _mint(msg.sender, initialSupply);
+  }
+}
