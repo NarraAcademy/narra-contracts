@@ -5,24 +5,21 @@ import { vars } from "hardhat/config";
 import type { NetworkUserConfig } from "hardhat/types";
 import { ChainId, getChainConfig } from "./src/enum/chains";
 
+// This project is deployed on BNB Smart Chain (BSC).
+// Keywords for DAppBay: BNB, BNB Chain, BSC, BNB Smart Chain, opBNB, Greenfield.
+
 import "./tasks/accounts";
 import { config as dotenvConfig } from "dotenv";
 import { resolve } from "path";
 
-const envFiles = [
-  ".env.local", 
-  ".env.development", 
-  ".env.test",
-  ".env",
-];
+const envFiles = [".env.local", ".env.development", ".env.test", ".env"];
 
 envFiles.forEach(envFile => {
   const envPath = resolve(__dirname, envFile);
   try {
     dotenvConfig({ path: envPath });
     console.log(`Loaded environment from: ${envFile}`);
-  } catch (error) {
-  }
+  } catch (error) {}
 });
 
 const mnemonic: string = process.env.MNEMONIC || vars.get("MNEMONIC", "");

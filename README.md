@@ -8,12 +8,12 @@ A blockchain-based arena gaming platform built on BNB Smart Chain (BSC) that ena
 - Smart Contracts: Solidity ^0.8.0
 
 ## Supported Networks
-
-- BNB Smart Chain Mainnet (Chain ID: 56) - **Production Environment**
+- BNB Smart Chain Testnet (Chain ID: 97)
+- BNB Smart Chain Mainnet (Chain ID: 56)
 
 ## Contract Addresses
 
-**BSC Mainnet**: `0x3402F032c4e41303d2158B77391D8b274D97138d`
+**Checkin Mainnet**: `0x3402F032c4e41303d2158B77391D8b274D97138d`
 
 ## Features
 
@@ -31,7 +31,7 @@ A blockchain-based arena gaming platform built on BNB Smart Chain (BSC) that ena
 ### Installation
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/NarraAcademy/narra-contracts.git
 cd narra-contracts
 
 # Install dependencies
